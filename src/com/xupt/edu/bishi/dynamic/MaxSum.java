@@ -1,7 +1,7 @@
 package com.xupt.edu.bishi.dynamic;
 /**
  * @author: zhaowanyue
- * @date: 2018/8/13
+ * @date: 2018/8/13     https://www.bilibili.com/video/av18512769/?spm_id_from=333.788.videocard.0
  * @description:动态规划的思想：选和不选列出表达式，并找出出口，即可解决此问题。
  *给定一个数组，选出不能的数不能相邻，求出最大和。
  * arr={1，2，4，1，7，8，3} ===》15
