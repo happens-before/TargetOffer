@@ -1,82 +1,66 @@
 package com.xupt.edu.bishi.lianjia;
 
-import java.util.Arrays;
-import java.util.Scanner;
 
-/**
- * @author: zhaowanyue
- * @date: 2018/8/18
- * @description:
- */
+import java.util.*;
+
 public class SheTuan {
-    public int[] howmany(int n,int [][] array)
-    {
-        if(n==1) return null;
-        int opt[]=new int[n];
-        Arrays.fill(opt,0);
-        int prev[]=new int[n];
-        prev[0]=0;
-        for(int i=1;i<n;i++)
-        {
-            for(int k=0;k<i;k++)
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int data[][] = new int[n][2];
+        int data1[][] = new int[n][2];
+        for(int i=0;i<n;i++){
+            data[i][0]=sc.nextInt();
+            data1[i][0]=data[i][0];
+            data[i][1]=sc.nextInt();
+            data1[i][1]=data[i][1];
+        }
+        // 使用Lambda表达式
+        //Arrays.parallelSort(arr1,(o1,o2) -> o1.length() - o2.length());
+        Arrays.sort(data,(x,y)->x[0]-y[0]);
+        int cnt=0;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<n;i++){
+            int flag = 1;
+            int high=-1;
+            for(int j=0;j<n;j++)
             {
-                int l=0;
-                if(array[i][0]>=array[k][1])
-                    l=k+1;
-                else
+                if(j!=i)
                 {
-                    l=prev[i-1];
+                    if(high==-1)
+                    {
+                        high=data[j][1];
+                    }
+                    else
+                    {
+                        if(high > data[j][0])
+                        {
+                            flag=0;
+                            break;
+                        }
+                        else
+                        {
+                            high=data[j][1];
+                        }
+                    }
                 }
-                if(l>=0 && l>prev[i])
-                    prev[i]=l;
+            }
+            if(flag==1)
+            {
+                cnt+=1;
+                map.put(data[i][0],data[i][1]);
             }
         }
-//        for(int i=0;i<prev.length;i++)
-//            System.out.println(prev[i]);
-        int count=0;
+
+        System.out.println(cnt);
         for(int i=0;i<n;i++)
         {
-            if(i==n-1)
-            {
-                if(prev[i]-prev[i-1]==1)
-                    count++;
-                    opt[i]=count;
+            System.out.print(map.get(data1[i][0]) +" ");
+            System.out.print(map.get(3) +" ");
+
+            if(map.get(data1[i][0])!=null && map.get(data1[i][0])==data1[i][1]){
+                System.out.print(i+1+" ");
             }
-            else
-            {
-                if(prev[i+1]-prev[i]==1)
-                {
-                    count++;
-                    opt[i]=count;
-                }
-                else if(prev[i+1]-prev[i]!=1)
-                {
-                    Arrays.fill(opt,0);
-                    opt[0]=prev[i];
-                }
-            }
-
-
-        }
-        return opt;
-
-    }
-    public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        int m=scanner.nextInt();
-        int array[][]=new int[m][2];
-        for(int i=0;i<m;i++) {
-            for(int j=0;j<2;j++)
-            {
-                array[i][j] = scanner.nextInt();
-            }
-
-        }
-        int[] result=new SheTuan().howmany(m,array);
-        System.out.println(result.length);
-        for(int i=0;i<result.length;i++)
-        {
-            System.out.print(result[i]+" ");
         }
     }
 }
