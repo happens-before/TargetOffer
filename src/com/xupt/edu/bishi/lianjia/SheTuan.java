@@ -1,6 +1,5 @@
 package com.xupt.edu.bishi.lianjia;
 
-
 import java.util.*;
 
 public class SheTuan {
@@ -15,8 +14,8 @@ public class SheTuan {
             data[i][1]=sc.nextInt();
             data1[i][1]=data[i][1];
         }
-        // 使用Lambda表达式
-        //Arrays.parallelSort(arr1,(o1,o2) -> o1.length() - o2.length());
+//         使用Lambda表达式
+//        Arrays.parallelSort(arr1,(o1,o2) -> o1.length() - o2.length());
         Arrays.sort(data,(x,y)->x[0]-y[0]);
         int cnt=0;
         HashMap<Integer,Integer> map = new HashMap<>();
