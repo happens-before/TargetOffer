@@ -91,7 +91,7 @@ public class MergeLink {
                 }
                 Node last=node2;
                 node2=node2.next;
-                last.next=node2;
+                last.next=node1;
             }
         }
         return node3;
