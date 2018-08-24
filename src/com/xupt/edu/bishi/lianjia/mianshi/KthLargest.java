@@ -14,7 +14,7 @@ package com.xupt.edu.bishi.lianjia.mianshi;
 
 /**
  * Quick Select的目标是找出第k大元素，所以
-    若切分后的左子数组的长度 > k，则第k大元素必出现在左子数组中；
+    若切分后的左子数组的长度(index - left+1) > k，则第k大元素必出现在左子数组中；
     若切分后的左子数组的长度 = k-1，则第k大元素为pivot；
     若上述两个条件均不满足，则第k大元素必出现在右子数组中。
  */
@@ -62,7 +62,6 @@ public class KthLargest {
        arr[i]=pivotKey;
        return i;
     }
-
 
     public static void main(String[] args) {
         int [] a={3,2,1,5,6,4};
