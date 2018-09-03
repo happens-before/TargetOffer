@@ -1,7 +1,7 @@
 create table employee(
 	emp_no int primary key auto_increment,
 	emp_name varchar(50) not null,
-	emp_sex varchar(2) check(emp_sex=’男’or’女’),
+	emp_sex varchar(2) check(emp_sex='男'or'女'),
 	emp_id varchar(18) not null,
 	play_no int,
 	add_no int
