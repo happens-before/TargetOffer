@@ -13,7 +13,7 @@ public class Test02 {
         String [] strings=string.split(",");
         int [] number=new int[strings.length];
         int k=0;
-        boolean shuzi=false;
+        boolean shuzi;
         for(int i=0;i<strings.length;i++)
         {
 
