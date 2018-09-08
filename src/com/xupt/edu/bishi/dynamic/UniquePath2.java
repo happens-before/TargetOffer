@@ -45,8 +45,8 @@ public class UniquePath2 {
        return opt[m-1][n-1];
     }
     public static void main(String[] args) {
-        //int array[][]={{0,0,0},{0,1,0},{0,0,0}};
-        int array[][]={{0,0},{1,1},{0,0}};
+        int array[][]={{0,0,0},{0,1,0},{0,0,0}};
+        //int array[][]={{0,0},{1,1},{0,0}};
         int path=new UniquePath2().uniquePathsWithObstacles(array);
         System.out.println(path);
     }
