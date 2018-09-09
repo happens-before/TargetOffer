@@ -25,16 +25,12 @@ public class Merge{
             for(int i=0;i<array2.length;i++)
                 set.add(array2[i]);
             List<Integer> list=new ArrayList<>(set);
-            Collections.sort(list);
+            Collections.sort(list);  //排序链表
             for(int i=0;i<list.size();i++)
             {
                 System.out.print(list.get(i)+" ");
             }
             System.out.println();
         }
-
-
-
-
     }
 }
