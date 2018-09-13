@@ -1,5 +1,9 @@
 package com.xupt.edu.bishi.leecode;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * @author: zhaowanyue
  * @date: 2018/9/4
@@ -10,6 +14,8 @@ package com.xupt.edu.bishi.leecode;
  */
 public class MinCostClimbingStairs {
     public int minCostClimbingStairs(int[] array) {
+        if(array.length>=0 && array.length<=2)
+            return 0;
         int dp[]=new int[array.length+1];
         dp[0]=dp[1]=0;
         for(int i=2;i<array.length+1;i++)
@@ -21,9 +27,16 @@ public class MinCostClimbingStairs {
         return dp[array.length];
     }
     public static void main(String[] args) {
-//        int [] array={10,15,20};
-        int [] array={1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+        Scanner in = new Scanner(System.in);
+        String s=in.next();
+        String strings[]=s.split(",");
+        int array[]=new int[strings.length];
+        for(int i=0;i<array.length;i++)
+        {
+            array[i]=Integer.parseInt(strings[i]);
+        }
         int result=new MinCostClimbingStairs().minCostClimbingStairs(array);
         System.out.println(result);
+
     }
 }
