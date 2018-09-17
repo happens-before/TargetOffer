@@ -24,8 +24,6 @@ public class Sushu {
             return false;
     }
     public static void main(String[] args) {
-//        Boolean b=new Sushu().pandu(5);
-//        System.out.println(b);
         Sushu sushu=new Sushu();
         for(int i=1;i<100;i++)
         {
